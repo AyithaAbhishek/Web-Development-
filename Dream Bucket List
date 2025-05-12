@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>My Dream Bucket List</title>
+
+  <style>
+
+    /* General reset and styling */
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+
+
+    body {
+
+      font-family: 'Arial', sans-serif;
+
+      background-color: #f0f8ff;
+
+      color: #333;
+
+      line-height: 1.6;
+
+    }
+
+
+
+    h1 {
+
+      text-align: center;
+
+      margin: 30px 0;
+
+      font-size: 2.5rem;
+
+      color: #333;
+
+    }
+
+
+
+    /* Styling for the container */
+
+    .container {
+
+      width: 80%;
+
+      margin: 0 auto;
+
+      padding: 20px;
+
+    }
+
+
+
+    /* Styling the unordered list */
+
+    .bucket-list {
+
+      list-style-type: none;
+
+      padding-left: 0;
+
+    }
+
+
+
+    .bucket-list li {
+
+      font-size: 1.2rem;
+
+      margin: 15px 0;
+
+      padding: 10px;
+
+      border-radius: 8px;
+
+      background-color: #fff;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    }
+
+
+
+    /* Styling the icons in list items */
+
+    .bucket-list li span {
+
+      margin-right: 10px;
+
+    }
+
+
+
+    /* Highlight completed goals */
+
+    .bucket-list li.completed {
+
+      background-color: #d4edda;
+
+      text-decoration: line-through;
+
+      color: #28a745;
+
+    }
+
+
+
+    /* Highlight pending goals */
+
+    .bucket-list li.pending {
+
+      background-color: #fff3cd;
+
+      color: #ffc107;
+
+    }
+
+
+
+    /* Responsive Design */
+
+    @media (max-width: 768px) {
+
+      .container {
+
+        width: 90%;
+
+      }
+
+
+
+      h1 {
+
+        font-size: 2rem;
+
+      }
+
+
+
+      .bucket-list li {
+
+        font-size: 1rem;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>My Dream Bucket List</h1>
+
+    <ul class="bucket-list">
+
+      <li class="pending">🎯 Visit Japan</li>
+
+      <li class="completed">✔️ Learn to Surf</li>
+
+      <li class="pending">⭐ Go Skydiving</li>
+
+      <li class="pending">🏞️ Hike the Grand Canyon</li>
+
+      <li class="completed">🎓 Graduate with Honors</li>
+
+      <li class="pending">🌍 Travel to all continents</li>
+
+      <li class="pending">📚 Write a Book</li>
+
+      <li class="pending">🎤 Sing on Stage</li>
+
+      <li class="pending">💪 Run a Marathon</li>
+
+      <li class="pending">🏖️ Take a month-long vacation</li>
+
+    </ul>
+
+  </div>
+
+</body>
+
+</html>
+
