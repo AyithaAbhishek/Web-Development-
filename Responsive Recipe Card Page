@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Vegetarian Recipe Cards</title>
+
+  <style>
+
+    :root {
+
+      --primary-color: #4caf50;
+
+      --background: #ffffff;
+
+      --card-shadow: rgba(0, 0, 0, 0.1);
+
+      --font-family: 'Segoe UI', sans-serif;
+
+    }
+
+
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+
+
+    body {
+
+      font-family: var(--font-family);
+
+      background-color: #f0f7f1;
+
+      padding: 1rem;
+
+    }
+
+
+
+    header {
+
+      text-align: center;
+
+      margin-bottom: 2rem;
+
+    }
+
+
+
+    header h1 {
+
+      color: var(--primary-color);
+
+    }
+
+
+
+    .recipe-container {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+      gap: 1.5rem;
+
+    }
+
+
+
+    .recipe-card {
+
+      background: var(--background);
+
+      border-radius: 10px;
+
+      box-shadow: 0 4px 8px var(--card-shadow);
+
+      padding: 1rem;
+
+      transition: transform 0.3s ease;
+
+    }
+
+
+
+    .recipe-card:hover {
+
+      transform: scale(1.02);
+
+    }
+
+
+
+    .recipe-card img {
+
+      width: 100%;
+
+      border-radius: 10px;
+
+      margin-bottom: 1rem;
+
+    }
+
+
+
+    .recipe-card h2 {
+
+      color: #333;
+
+    }
+
+
+
+    .description {
+
+      font-size: 0.9rem;
+
+      margin: 0.5rem 0;
+
+    }
+
+
+
+    .toggle-btn {
+
+      background-color: var(--primary-color);
+
+      color: white;
+
+      border: none;
+
+      padding: 0.4rem 1rem;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+
+
+    .ingredients,
+
+    .preparation {
+
+      margin-top: 0.5rem;
+
+      font-size: 0.9rem;
+
+    }
+
+
+
+    .ingredients ul {
+
+      padding-left: 1.2rem;
+
+      list-style: disc;
+
+    }
+
+
+
+    .hidden {
+
+      display: none;
+
+    }
+
+
+
+    @media (max-width: 600px) {
+
+      .recipe-container {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>Vegetarian Recipes</h1>
+
+  </header>
+
+
+
+  <main class="recipe-container">
+
+    <!-- Veggie Stir Fry -->
+
+    <article class="recipe-card">
+
+      <img src="https://via.placeholder.com/400x200?text=Veggie+Stir+Fry" alt="Veggie Stir Fry" />
+
+      <h2>Veggie Stir Fry</h2>
+
+      <p class="description">A quick and healthy stir fry loaded with colorful vegetables.</p>
+
+      <button class="toggle-btn">Show Ingredients</button>
+
+      <div class="ingredients hidden">
+
+        <h3>Ingredients</h3>
+
+        <ul>
+
+          <li>1 cup broccoli florets</li>
+
+          <li>1 bell pepper, sliced</li>
+
+          <li>1 carrot, julienned</li>
+
+          <li>Soy sauce, garlic, ginger</li>
+
+        </ul>
+
+      </div>
+
+      <div class="preparation">
+
+        <h3>Preparation</h3>
+
+        <p>Sauté vegetables in a hot pan with garlic and ginger. Add soy sauce and cook until tender.</p>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- Caprese Salad -->
+
+    <article class="recipe-card">
+
+      <img src="https://via.placeholder.com/400x200?text=Caprese+Salad" alt="Caprese Salad" />
+
+      <h2>Caprese Salad</h2>
+
+      <p class="description">Fresh mozzarella, tomatoes, and basil topped with balsamic glaze.</p>
+
+      <button class="toggle-btn">Show Ingredients</button>
+
+      <div class="ingredients hidden">
+
+        <h3>Ingredients</h3>
+
+        <ul>
+
+          <li>Fresh mozzarella</li>
+
+          <li>Tomatoes, sliced</li>
+
+          <li>Fresh basil leaves</li>
+
+          <li>Balsamic glaze, olive oil</li>
+
+        </ul>
+
+      </div>
+
+      <div class="preparation">
+
+        <h3>Preparation</h3>
+
+        <p>Layer tomato, mozzarella, and basil. Drizzle with olive oil and balsamic glaze before serving.</p>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- Chickpea Curry -->
+
+    <article class="recipe-card">
+
+      <img src="https://via.placeholder.com/400x200?text=Chickpea+Curry" alt="Chickpea Curry" />
+
+      <h2>Chickpea Curry</h2>
+
+      <p class="description">A hearty and flavorful vegetarian curry made with chickpeas and spices.</p>
+
+      <button class="toggle-btn">Show Ingredients</button>
+
+      <div class="ingredients hidden">
+
+        <h3>Ingredients</h3>
+
+        <ul>
+
+          <li>1 can chickpeas</li>
+
+          <li>1 onion, chopped</li>
+
+          <li>2 tomatoes, diced</li>
+
+          <li>Curry powder, garlic, coconut milk</li>
+
+        </ul>
+
+      </div>
+
+      <div class="preparation">
+
+        <h3>Preparation</h3>
+
+        <p>Sauté onion and garlic. Add tomatoes and spices. Stir in chickpeas and coconut milk, simmer until thickened.</p>
+
+      </div>
+
+    </article>
+
+  </main>
+
+
+
+  <script>
+
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        const ingredients = button.nextElementSibling;
+
+        ingredients.classList.toggle('hidden');
+
+        button.textContent = ingredients.classList.contains('hidden') ? 'Show Ingredients' : 'Hide Ingredients';
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
