@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Personal Daily Planner</title>
+
+  <style>
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      background-color: #f4f6f8;
+
+      margin: 0;
+
+      padding: 20px;
+
+    }
+
+
+
+    .container {
+
+      max-width: 600px;
+
+      margin: auto;
+
+    }
+
+
+
+    h1 {
+
+      text-align: center;
+
+      margin-bottom: 20px;
+
+    }
+
+
+
+    #planner-date {
+
+      display: block;
+
+      margin: 0 auto 20px auto;
+
+      padding: 5px 10px;
+
+      font-size: 16px;
+
+    }
+
+
+
+    .time-block {
+
+      display: flex;
+
+      align-items: center;
+
+      margin-bottom: 8px;
+
+      border: 1px solid #ccc;
+
+      background-color: #fff;
+
+      padding: 10px;
+
+      border-radius: 4px;
+
+    }
+
+
+
+    .hour {
+
+      width: 80px;
+
+      font-weight: bold;
+
+    }
+
+
+
+    .task-input {
+
+      flex: 1;
+
+      margin: 0 10px;
+
+      padding: 5px;
+
+      font-size: 14px;
+
+    }
+
+
+
+    .complete {
+
+      text-decoration: line-through;
+
+      color: gray;
+
+    }
+
+
+
+    .priority {
+
+      margin-left: 10px;
+
+      padding: 3px;
+
+    }
+
+
+
+    button {
+
+      padding: 5px 10px;
+
+      margin-left: 5px;
+
+      cursor: pointer;
+
+    }
+
+
+
+    .high { background-color: #ffcccc; }
+
+    .medium { background-color: #fff3cd; }
+
+    .low { background-color: #d4edda; }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>🗓️ Personal Daily Planner</h1>
+
+    <input type="date" id="planner-date" />
+
+    <div id="planner"></div>
+
+  </div>
+
+
+
+  <script>
+
+    const planner = document.getElementById('planner');
+
+    const plannerDate = document.getElementById('planner-date');
+
+
+
+    const hours = [];
+
+    for (let i = 7; i <= 22; i++) {
+
+      const hourLabel = i < 12 ? `${i} AM` :
+
+        i === 12 ? `12 PM` :
+
+        `${i - 12} PM`;
+
+      hours.push({ hour: i, label: hourLabel });
+
+    }
+
+
+
+    function renderPlanner(dateKey) {
+
+      planner.innerHTML = '';
+
+      const savedTasks = JSON.parse(localStorage.getItem(dateKey)) || {};
+
+
+
+      hours.forEach(({ hour, label }) => {
+
+        const taskData = savedTasks[hour] || { text: '', complete: false, priority: '' };
+
+
+
+        const block = document.createElement('div');
+
+        block.className = `time-block ${taskData.priority}`;
+
+
+
+        const hourLabel = document.createElement('div');
+
+        hourLabel.className = 'hour';
+
+        hourLabel.textContent = label;
+
+
+
+        const input = document.createElement('input');
+
+        input.className = 'task-input';
+
+        input.type = 'text';
+
+        input.value = taskData.text;
+
+        if (taskData.complete) input.classList.add('complete');
+
+
+
+        const checkbox = document.createElement('input');
+
+        checkbox.type = 'checkbox';
+
+        checkbox.checked = taskData.complete;
+
+
+
+        const priority = document.createElement('select');
+
+        priority.className = 'priority';
+
+        ['','low','medium','high'].forEach(level => {
+
+          const opt = document.createElement('option');
+
+          opt.value = level;
+
+          opt.textContent = level.charAt(0).toUpperCase() + level.slice(1);
+
+          if (taskData.priority === level) opt.selected = true;
+
+          priority.appendChild(opt);
+
+        });
+
+
+
+        const saveBtn = document.createElement('button');
+
+        saveBtn.textContent = 'Save';
+
+
+
+        saveBtn.onclick = () => {
+
+          const newTask = {
+
+            text: input.value,
+
+            complete: checkbox.checked,
+
+            priority: priority.value
+
+          };
+
+          savedTasks[hour] = newTask;
+
+          localStorage.setItem(dateKey, JSON.stringify(savedTasks));
+
+          renderPlanner(dateKey); // re-render to apply style updates
+
+        };
+
+
+
+        block.append(hourLabel, input, checkbox, priority, saveBtn);
+
+        planner.appendChild(block);
+
+      });
+
+    }
+
+
+
+    // Set today's date by default
+
+    const today = new Date().toISOString().split('T')[0];
+
+    plannerDate.value = today;
+
+    renderPlanner(today);
+
+
+
+    plannerDate.addEventListener('change', () => {
+
+      renderPlanner(plannerDate.value);
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
