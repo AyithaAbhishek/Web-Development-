@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechNova 2026</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+line-height:1.6;
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#111;
+color:white;
+padding:15px 40px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.navbar ul{
+display:flex;
+list-style:none;
+}
+
+.navbar ul li{
+margin-left:20px;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.navbar a:hover{
+color:#ff4c60;
+}
+
+/* Hero Section */
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.hero h2{
+font-size:60px;
+}
+
+.hero p{
+font-size:22px;
+margin-top:10px;
+}
+
+.btn{
+display:inline-block;
+background:#ff4c60;
+padding:12px 25px;
+color:white;
+border:none;
+border-radius:5px;
+margin-top:20px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#e63c4f;
+}
+
+/* Sections */
+
+section{
+padding:60px 10%;
+text-align:center;
+}
+
+section h2{
+margin-bottom:20px;
+font-size:32px;
+}
+
+/* Cards */
+
+.cards{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.card{
+background:#f4f4f4;
+padding:25px;
+border-radius:10px;
+width:250px;
+transition:0.3s;
+}
+
+.card i{
+font-size:40px;
+margin-bottom:10px;
+color:#ff4c60;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* Timeline */
+
+.timeline{
+list-style:none;
+font-size:18px;
+}
+
+.timeline li{
+padding:10px;
+}
+
+/* Sponsors */
+
+.sponsor-logos img{
+width:120px;
+margin:10px;
+border-radius:8px;
+}
+
+/* Footer */
+
+footer{
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.social i{
+margin:10px;
+font-size:20px;
+cursor:pointer;
+}
+
+.social i:hover{
+color:#ff4c60;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h2{
+font-size:40px;
+}
+
+.navbar{
+flex-direction:column;
+}
+
+.navbar ul{
+margin-top:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<header>
+
+<nav class="navbar">
+
+<h1>TechNova</h1>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#highlights">Highlights</a></li>
+<li><a href="#schedule">Schedule</a></li>
+<li><a href="#register">Register</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<h2>TechNova 2026</h2>
+
+<p>Where Innovation Meets Creativity</p>
+
+<a href="#register" class="btn">Register Now</a>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+<h2>About The Event</h2>
+
+<p>
+TechNova is a technology and innovation festival bringing together developers,
+entrepreneurs, designers, and students to explore the future of technology.
+Enjoy workshops, keynote talks, networking sessions, and exhibitions.
+</p>
+
+<br>
+
+<p>
+📅 July 20, 2026 <br>
+📍 Bangalore, India
+</p>
+
+<br>
+
+<a href="https://maps.google.com" target="_blank" class="btn">View Location</a>
+
+</section>
+
+<!-- Highlights -->
+
+<section id="highlights">
+
+<h2>Event Highlights</h2>
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-microphone"></i>
+<h3>Tech Talks</h3>
+<p>Industry experts sharing insights on AI, Web3 and Cloud.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-laptop-code"></i>
+<h3>Hackathon</h3>
+<p>24-hour coding challenge with exciting prizes.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-utensils"></i>
+<h3>Food Stalls</h3>
+<p>Enjoy amazing street food and drinks.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Schedule -->
+
+<section id="schedule">
+
+<h2>Event Schedule</h2>
+
+<ul class="timeline">
+
+<li>09:00 AM – Opening Ceremony</li>
+<li>10:00 AM – Keynote Speech</li>
+<li>12:00 PM – Workshops</li>
+<li>02:00 PM – Hackathon Begins</li>
+<li>06:00 PM – Networking &
+Music</li>
+
+</ul>
+
+</section>
+
+<!-- Register -->
+
+<section id="register">
+
+<h2>Register for the Event</h2>
+
+<p>Reserve your spot for TechNova 2026.</p>
+
+<br>
+
+<button class="btn">RSVP Now</button>
+
+</section>
+
+<!-- Sponsors -->
+
+<section id="sponsors">
+
+<h2>Our Sponsors</h2>
+
+<div class="sponsor-logos">
+
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+<p>Contact: technova@email.com</p>
+
+<div class="social">
+
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-twitter"></i>
+
+</div>
+
+<p>© 2026 TechNova Festival</p>
+
+</footer>
+
+<script>
+
+/* Smooth Scroll */
+
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+
+anchor.addEventListener("click", function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href"))
+.scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
